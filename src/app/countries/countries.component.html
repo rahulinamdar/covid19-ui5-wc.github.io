@@ -1,0 +1,58 @@
+<!-- Header -->
+<!-- <div class="header">
+	<span>Countries</span>
+</div> -->
+<ui5-input id="searchInput" (change)="onChange($event)" placeholder="Enter search criteria ..." style="width: 100%">
+	<ui5-icon id="searchIcon" slot="icon" name="search"></ui5-icon>
+</ui5-input>
+
+<ui5-table class="demo-table" id="table" no-data-text="No Data" show-no-data>
+	<!-- Columns -->
+	<ui5-table-column slot="columns">
+		<span style="line-height: 1.3rem">Country</span>
+	</ui5-table-column>
+
+	<ui5-table-column slot="columns">
+		<span style="line-height: 1.3rem">Total Cases</span>
+	</ui5-table-column>
+
+	<ui5-table-column slot="columns">
+		<span style="line-height: 1.3rem">New Cases</span>
+	</ui5-table-column>
+
+	<ui5-table-column slot="columns">
+		<span style="line-height: 1.3rem">Total Deaths</span>
+  </ui5-table-column>
+  
+  <ui5-table-column slot="columns">
+		<span style="line-height: 1.3rem">Total Recovered</span>
+  </ui5-table-column>
+  
+  <ng-container *ngFor="let Country of Countries">
+  <ui5-table-row >
+    
+    <ui5-table-cell>
+      <div style="width: 2.7rem;">
+        <span style="font-weight: 600; color: #000000;">{{Country.country}}</span>
+      </div>
+      <div style="width: 2.7rem;">
+        <img src="{{Country.countryInfo.flag}}" alt="{{Country.country}}" style="width: 2.7rem;"/>
+      </div>
+    </ui5-table-cell>
+    <ui5-table-cell style="vertical-align: middle;">
+      <span style="font-weight: 600; color: #000000;">{{Country.cases}}</span>
+    </ui5-table-cell>
+    <ui5-table-cell style="vertical-align: middle;">
+      <span style="font-weight: 600; color: #793131;">{{Country.todayCases}}</span>
+    </ui5-table-cell>
+    <ui5-table-cell style="vertical-align: middle;">
+      <span style="font-weight: 600; color: #dd3939;">{{Country.deaths}}</span>
+    </ui5-table-cell>
+    <ui5-table-cell style="vertical-align: middle;">
+      <span style="font-weight: 600; color:green;">{{Country.recovered}}</span>
+    </ui5-table-cell>
+    
+  </ui5-table-row>
+</ng-container>
+
+</ui5-table>
