@@ -7,11 +7,15 @@ import { Covid19Service } from '../covid19.service';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
-  allData: Object;
+  allData: object;
   Countries: any;
-  country : String;
+  country : string;
   covid19Service: any;
-
+  indiaCount: any;
+  /**
+   * 
+   * @param covid19Service 
+   */
   constructor(covid19Service : Covid19Service) {
     this.covid19Service=covid19Service;
     covid19Service.getAllData().subscribe(
@@ -23,16 +27,15 @@ export class CountriesComponent implements OnInit {
         data => this.Countries = data,  
         error => console.error('Error: ' + error),
         () => console.log('Completed!'));
-
    }
 
   ngOnInit() {
   }
 
-  onPress(oEvent: any){
-    debugger;
-  }
-
+  /**
+   * 
+   * @param oEvent 
+   */
   onChange(oEvent: any){
     this.country = oEvent.target.value;
     if(this.country.trim() === ""){

@@ -11,7 +11,7 @@ export class Covid19Service {
     }
 
    getAllData(){
-      return this.http.get("https://corona.lmao.ninja/All");
+      return this.http.get("https://corona.lmao.ninja/all");
    }
 
    getALLCountries(){
@@ -20,5 +20,9 @@ export class Covid19Service {
 
    getCountry(country: string){
     return this.http.get("https://corona.lmao.ninja/countries/"+country);
+   }
+
+   getIndiaCount(){
+      return this.http.get("https://corona.lmao.ninja/countries/india");
    }
 }

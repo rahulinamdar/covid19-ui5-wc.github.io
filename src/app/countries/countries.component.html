@@ -2,11 +2,21 @@
 <!-- <div class="header">
 	<span>Countries</span>
 </div> -->
-<ui5-input id="searchInput" (change)="onChange($event)" placeholder="Enter search criteria ..." style="width: 100%">
+<!-- <ui5-input id="searchInput" (change)="onChange($event)" placeholder="Enter search criteria ..." style="width: 100%">
 	<ui5-icon id="searchIcon" slot="icon" name="search"></ui5-icon>
-</ui5-input>
-
-<ui5-table class="demo-table" id="table" no-data-text="No Data" show-no-data>
+</ui5-input> -->
+<div class="fixed" style="position: fixed; width: 100%; z-index: 999;">
+<ui5-shellbar
+	id="shellbar"
+	heading="Covid-19 Statistics"
+  secondary-title="Affected Countries"
+  logo="../../../assets/img/corona-icon.png"
+  show-co-pilot>
+  
+  <ui5-input title="Enter the country to search" slot="searchField" (change)="onChange($event)" placeholer="Enter country.."></ui5-input>
+</ui5-shellbar>
+</div>
+<ui5-table class="demo-table" id="table" no-data-text="No Data" show-no-data style="position: absolute; top: 8%;">
 	<!-- Columns -->
 	<ui5-table-column slot="columns">
 		<span style="line-height: 1.3rem">Country</span>

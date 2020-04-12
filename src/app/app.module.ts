@@ -13,6 +13,7 @@ import "@ui5/webcomponents/dist/TableCell.js";
 import "@ui5/webcomponents/dist/Input.js";
 import "@ui5/webcomponents/dist/features/InputSuggestions.js";
 import "@ui5/webcomponents-icons/dist/icons/search.js"
+import "@ui5/webcomponents-fiori/dist/ShellBar";
 import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
