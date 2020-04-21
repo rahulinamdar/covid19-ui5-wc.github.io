@@ -11,18 +11,18 @@ export class Covid19Service {
     }
 
    getAllData(){
-      return this.http.get("https://corona.lmao.ninja/all");
+      return this.http.get("https://corona.lmao.ninja/v2/all");
    }
 
    getALLCountries(){
-      return this.http.get("https://corona.lmao.ninja/countries?sort=cases");
+      return this.http.get("https://corona.lmao.ninja/v2/countries?sort=cases");
    }
 
    getCountry(country: string){
-    return this.http.get("https://corona.lmao.ninja/countries/"+country);
+    return this.http.get("https://corona.lmao.ninja/v2/countries/"+country);
    }
 
    getIndiaCount(){
-      return this.http.get("https://corona.lmao.ninja/countries/india");
+      return this.http.get("https://corona.lmao.ninja/v2/countries/india");
    }
 }
